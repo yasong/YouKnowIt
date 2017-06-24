@@ -4,7 +4,15 @@
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++</br>
 ##### raw message
-filename: ip <binary>(ip is the client ip, not the ip in packet)</br>
-length[2 bytes] + packet[length bytes] + length[2 bytes] + packetpacket[length bytes]...</br>
+filename: ip &lt;binary file> (ip is the client ip, not the ip in packet)</br>
+format: length[2 bytes] + packet[ethernet][length bytes] + length[2 bytes] + packet[ethernet][length bytes]...</br>
+
+##### Processed meaasge
+filename: source ip_destination ip &lt;binary file> (for eaxmple: 192.168.1.1_57.63.37.21)</br>
+
+problem: IP fragmentation and reassembly
+id + flag + offset
+format: tcp[74 63 70 00] + length[2 bytes] + packet[tcp][length bytes]+ length[2 bytes] + packet[tcp][length bytes]...</br>
+format: udp[75 64 70 00]
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++</br>
